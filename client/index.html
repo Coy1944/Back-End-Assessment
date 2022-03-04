@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Back End Assessment</title>
+  </head>
+  <body class="container">
+    <button id="fortuneButton">Get a Fortune</button>
+    <button id="successButton">Tips for success</button>
+    <button id="goalButton">Ideas for goals</button>
+    <button id="goal2Button">More goal ideas</button>
+    <button id="post-btn">I'm a button</button>
+    
+    
+    <form>
+      <label for="fname">Write your goal:</label><br>
+      <input type="text" id="fname" name="fname"><br>
+      <label for="lname">Time to accomplish the goal:</label><br>
+      <input type="text" id="lname" name="lname">
+      <button>Submit</button>
+    </form>
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      document.getElementById("fortuneButton").onclick = function () {
+        axios.get("http://localhost:4000/api/fortune/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+
+     
+      document.getElementById("successButton").onclick = function () {
+        axios.get("http://localhost:4000/api/success/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+    
+
+    
+      document.getElementById("goalButton").onclick = function () {
+        axios.get("http://localhost:4000/api/goal/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+    
+
+    
+      document.getElementById("goal2Button").onclick = function () {
+        axios.get("http://localhost:4000/api/goal2/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+
+      document.getElementById("postButton").onclick = function () {
+        axios.post("http://localhost:4000/api/post/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+  
+      
+  
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
