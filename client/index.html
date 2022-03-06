@@ -4,20 +4,79 @@
     <title>Back End Assessment</title>
   </head>
   <body class="container">
+    <button id="complimentButton">Get a compliment</button>
+    <button id="fortuneButton">Get a fortune</button>
+
+    <input id="nameInput" type="text" placeholder="Enter your name here" />
+    <button id="nameButton">Submit Name</button>
+
+    <input id="indexInput" placeholder="Enter an index number" />
+    <button id="indexButton">Delete Names</button>
+
+    <form>
+      <label>This is where the form is</label>
+      <label>Type in a name</label><input id="newNameInput" type="text" placeholder="Enter the new name" />
+      <label>Type in the index</label><input id="newNameIndex" placeholder="Enter an index to edit" />
+      <input id="submitForm" type="button" value="Submit" />
+    </form>
+
+    <button id="successButton">Tips for success</button>
+    <button id="goalButton">Ideas for goals</button>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Back End Assessment</title>
+  </head>
+  <body class="container">
     <button id="fortuneButton">Get a Fortune</button>
+    <button id="fortune1Button">Get a Fortune</button>
+    
     <button id="successButton">Tips for success</button>
     <button id="goalButton">Ideas for goals</button>
     <button id="goal2Button">More goal ideas</button>
     <button id="post-btn">I'm a button</button>
     
+    <input id="nameInput" type="text" placeholder="Enter your name here"
     
-    <form>
-      <label for="fname">Write your goal:</label><br>
-      <input type="text" id="fname" name="fname"><br>
-      <label for="lname">Time to accomplish the goal:</label><br>
-      <input type="text" id="lname" name="lname">
-      <button>Submit</button>
-    </form>
+  
     
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
@@ -58,22 +117,48 @@
             });
       };
 
-      document.getElementById("postButton").onclick = function () {
-        axios.post("http://localhost:4000/api/post/")
-            .then(function (response) {
-              const data = response.data;
-              alert(data);
-            });
-      };
+      // document.getElementById("postButton").onclick = function () {
+      //   axios.post("http://localhost:4000/api/post/")
+      //       .then(function (response) {
+      //         const data = response.data;
+      //         alert(data);
+      //       });
+      // };
   
       
   
+const fortune1Btn = document.getElementById('fortune1Button');
+
+const nameBtn = document.getElementById('nameButton');
+const nameInput = document.getElementById('nameInput');
+
+
+function getFortune1() {
+  axios.get('http://localhost:400/api/fortune1')
+  .then((res) => {
+    alert(res.data)
+  });
+};
+
+
+function creatName() {
+  const newName = nameInput.value ;
+
+  const body = {
+    newName 
+  };
+
+  axios.post('http://localhost:4000/api/name', body)
+  .then((res) => {
+
+  })
+}
 
 
 
 
-
+fortune1Btn.addEventListener('click', getFortune1)
 
     </script>
   </body>
-</html>
+</html> -->
